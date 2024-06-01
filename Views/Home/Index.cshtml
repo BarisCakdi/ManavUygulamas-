@@ -1,0 +1,18 @@
+﻿@model List<Urun>
+
+@if (ViewData["Hata"] != null)
+{
+    <div class="alert alert-danger">
+        @ViewData["Hata"]
+    </div>
+}
+
+<form method="post" action="/home/satinal">
+    <ul>
+        @foreach (var urun in Model)
+        {
+            <li><label><input required type="radio" name="ad" value="@urun.Ad" /> @urun.Ad (Stok: @urun.Stok) @urun.Fiyat TL</label></li>
+        }
+    </ul>
+    <p><input type="number" required name="para" placeholder="Para"> <button>Satın Al</button></p>
+</form>

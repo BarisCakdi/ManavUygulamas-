@@ -1,0 +1,22 @@
+﻿@model List<Satis>
+
+<h1>Rapor</h1>
+<table class="table" >
+    <tr>
+        <th>Ürün Adı</th>
+        <th>Toplam Satış</th>
+        <th>Satış Adedi</th>
+    </tr>
+    @foreach(var satis in Model)
+    {
+        <tr>
+            <td>@satis.UrunAdi</td>
+            <td>@satis.ToplamSatis.ToString("N") TL</td>
+            <td>@satis.Adet</td>
+        </tr>
+    }
+</table>
+
+
+@* @ViewBag.Toplam.ToString("N") bu formatta ki yazımda çıkan sonucu tam türklirası gibi olarak gösteriyor *@
+<p style="font-weight: bold;">Toplam Satış: @ViewBag.Toplam.ToString("N") TL</p>

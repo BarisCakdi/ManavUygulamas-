@@ -1,0 +1,12 @@
+﻿@if (ViewData["Hata"] == null)
+{
+    <div class="alert alert-success">
+        Tebrikler! Satın alma işlemi başarılı.
+    </div>
+}
+else
+{
+    <div class="alert alert-danger">
+        @ViewData["Hata"]
+    </div>
+}
